@@ -11,12 +11,12 @@ do
 		if [[ prev != "$cur" ]]
 		then
 			
-			if [[ "$cur" =~ ^-?[0-9]+$ ]]
+			if [[ "$cur" =~ ^-?[0-9] ]]
 			then
-				echo "$cur"
+				echo $cur
 				prev=$cur
 			else
-				echo "Spoiler Alert">&2
+				echo "Spoiler Alert"
 				prev=$cur
 		
 			fi
