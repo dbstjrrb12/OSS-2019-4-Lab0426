@@ -11,12 +11,12 @@ do
 		if [[ prev != "$cur" ]]
 		then
 			
-			if [ ! \( $cur -eq "I watched Avengers: Endgame. Thanos d**s..." \) ]
+			if [[ "$cur" =~ ^-?[0-9]+$ ]]
 			then
 				echo "$cur"
 				prev=$cur
 			else
-				echo "Spoiler Alert"
+				echo "Spoiler Alert">&2
 				prev=$cur
 		
 			fi
