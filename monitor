@@ -7,10 +7,20 @@ do
 	if [[ -e log.txt ]]
 	then
 		cur=$( tail -n 1 log.txt )
-		if [[ $cur != $prev ]] 
+
+		if [[ prev != "$cur" ]]
 		then
-			echo $cur
-			prev=$cur
+			
+			if [ ! \( $cur -eq "I watched Avengers: Endgame. Thanos d**s..." \) ]
+			then
+				echo "$cur"
+				prev=$cur
+			else
+				echo "Spoiler Alert"
+				prev=$cur
+		
+			fi
+
 		fi
 	fi
 done
