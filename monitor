@@ -13,11 +13,9 @@ do
 			then
 				echo $cur
 				prev=$cur
-				echo "test"
 			else
 				echo "Spoiler Alert"
 				prev=$cur
-				echo "test"
 			fi
 		fi
 	fi
