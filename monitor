@@ -3,21 +3,23 @@
 prev=a
 
 while ((1))
-	do
-		if [[ -e log.txt ]]
+do
+	if [[ -e log.txt ]]
+	then
+		cur=$( tail -n 1 log.txt )
+		if [[ $cur != $prev ]] 
 		then
-			cur=$( tail -n 1 log.txt )
-			if [[ $cur != $prev ]] 
+			if [[ "$cur" =~ ^-?[0-9] ]]
 			then
-				if [[ "$cur" =~ ^-?[0-9] ]]
-				then
 				echo $cur
 				prev=$cur
+				echo "test"
 			else
 				echo "Spoiler Alert"
 				prev=$cur
-			fi
+				echo "test"
 			fi
 		fi
-	done
+	fi
+done
 

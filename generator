@@ -14,14 +14,14 @@ do
 		echo "$SECONDS"
 		echo >> log.txt "$SECONDS"
 		start=$SECONDS
-		sleep 2
-		
+				
 		RAND=$RANDOM
 		if [[ $((RAND%3)) -eq 0 ]]
 		then
 			echo $SPOILER
 			echo >> log.txt "$SPOILER"
 		fi
+		sleep 2
 	fi
 done
 
